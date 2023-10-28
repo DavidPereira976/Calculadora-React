@@ -1,11 +1,24 @@
 import { useState } from "react";
-import { Title, FirstComponentMain, Dados, StyleButton } from "./styled";
+import BackgroudMath from "../../assets/imgs/math-matematica-gif.gif";
 
+import {
+  Title,
+  SubTitle,
+  FirstSection,
+  FirstDiv,
+  StyleBoxInput,
+  SecondDiv,
+  GridBox,
+  ResultBox,
+  StyleInput,
+  StyleButton,
+} from "./styled";
 
 function Main() {
+
   const [primeiroValor, setPrimeiroValor] = useState();
   const [segundoValor, setSegundoValor] = useState();
-  const [resultado, setResultado] = useState();
+  const [resultado, setResultado] = useState("=");
 
   const CapturarPrimeiroValor = (item) => {
     setPrimeiroValor(Number(item.target.value));
@@ -24,38 +37,37 @@ function Main() {
   };
 
   const Multiplicar = () => {
-  setResultado(primeiroValor * segundoValor)
+    setResultado(primeiroValor * segundoValor);
   };
 
   const Divisao = () => {
-  setResultado(primeiroValor / segundoValor)
-  }
+    setResultado(primeiroValor / segundoValor);
+  };
 
   return (
     <>
-      <FirstComponentMain>
-        <Title>Calculadora</Title>
-      </FirstComponentMain>
+      <FirstSection>
+        <Title>Calculadora - React</Title>
+        <GridBox>
+          <FirstDiv>
+            <StyleBoxInput>
+              <StyleInput type="number" onChange={CapturarPrimeiroValor} />
+              <StyleInput type="number" onChange={CapturarSegundoValor} />
+            </StyleBoxInput>
+            <ResultBox>
+              <SubTitle>{resultado}</SubTitle>
+            </ResultBox>
+          </FirstDiv>
 
-      <FirstComponentMain>
-        <Dados
-          type="number"
-          placeholder="Digite o Primeiro Valor"
-          onChange={CapturarPrimeiroValor}
-        />
-        <Dados
-          type="number"
-          placeholder="Digite o Segundo Valor"
-          onChange={CapturarSegundoValor}
-        />
-        <StyleButton onClick={Soma}>+</StyleButton>
-        <StyleButton onClick={Subtrair}>-</StyleButton>
-        <StyleButton onClick={Multiplicar}>X</StyleButton>
-        <StyleButton onClick={Divisao}>/</StyleButton>
-      </FirstComponentMain>
-      <FirstComponentMain>
-       <h1>{resultado}</h1>
-      </FirstComponentMain>
+          <SecondDiv>
+            <StyleButton onClick={Soma}>+</StyleButton>
+            <StyleButton onClick={Subtrair}>-</StyleButton>
+            <StyleButton onClick={Multiplicar}>x</StyleButton>
+            <StyleButton onClick={Divisao}>÷</StyleButton>
+          </SecondDiv>
+        </GridBox>
+       
+      </FirstSection>
     </>
   );
 }
