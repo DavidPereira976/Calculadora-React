@@ -23,6 +23,14 @@ function Main() {
     setResultado(primeiroValor - segundoValor);
   };
 
+  const Multiplicar = () => {
+  setResultado(primeiroValor * segundoValor)
+  };
+
+  const Divisao = () => {
+  setResultado(primeiroValor / segundoValor)
+  }
+
   return (
     <>
       <FirstComponentMain>
@@ -42,8 +50,8 @@ function Main() {
         />
         <StyleButton onClick={Soma}>+</StyleButton>
         <StyleButton onClick={Subtrair}>-</StyleButton>
-        <StyleButton>X</StyleButton>
-        <StyleButton>/</StyleButton>
+        <StyleButton onClick={Multiplicar}>X</StyleButton>
+        <StyleButton onClick={Divisao}>/</StyleButton>
       </FirstComponentMain>
       <FirstComponentMain>
        <h1>{resultado}</h1>
