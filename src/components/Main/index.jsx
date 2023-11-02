@@ -1,5 +1,5 @@
-import { useState } from "react";
-import BackgroudMath from "../../assets/imgs/math-matematica-gif.gif";
+import { useEffect, useState } from "react";
+// import BackgroudMath from "../../assets/imgs/math-matematica-gif.gif";
 
 import {
   Title,
@@ -12,6 +12,7 @@ import {
   ResultBox,
   StyleInput,
   StyleButton,
+  BorderStyledBox
 } from "./styled";
 
 function Main() {
@@ -19,6 +20,8 @@ function Main() {
   const [primeiroValor, setPrimeiroValor] = useState();
   const [segundoValor, setSegundoValor] = useState();
   const [resultado, setResultado] = useState("=");
+
+  const [cor, setCor] = useState("Tomato");
 
   const CapturarPrimeiroValor = (item) => {
     setPrimeiroValor(Number(item.target.value));
@@ -44,9 +47,21 @@ function Main() {
     setResultado(primeiroValor / segundoValor);
   };
 
+  useEffect(() => {
+		setTimeout(() => {
+			if (cor === "Tomato") {
+				setCor("Blue");
+			} else if (cor=== "Blue") {
+				setCor("Pink");
+			} else if (cor === "Pink") {
+      setCor("Tomato")
+      }
+		}, 2000);
+	});
   return (
     <>
       <FirstSection>
+        <BorderStyledBox style={{ backgroundColor: cor, transition: "2s", }}>
         <Title>Calculadora - React</Title>
         <GridBox>
           <FirstDiv>
@@ -66,8 +81,9 @@ function Main() {
             <StyleButton onClick={Divisao}>÷</StyleButton>
           </SecondDiv>
         </GridBox>
-       
+        </BorderStyledBox>
       </FirstSection>
+      <h1>Este ´seu titulo</h1>
     </>
   );
 }
