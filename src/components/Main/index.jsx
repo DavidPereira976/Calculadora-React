@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import BackgroudMath from "../../assets/imgs/math-matematica-gif.gif";
 
 import {
   Title,
@@ -83,7 +82,6 @@ function Main() {
         </GridBox>
         </BorderStyledBox>
       </FirstSection>
-      <h1>Este ´seu titulo</h1>
     </>
   );
 }

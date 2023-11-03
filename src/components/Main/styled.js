@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Main from "../Main/index";
 
 export const FirstSection = styled.section`
 border:solid #007F00;
@@ -8,7 +7,7 @@ height: 100vh;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-
+background-image: url(../src/assets/imgs/backgroud.avif);
 `
 
 export const FirstDiv = styled.div`
