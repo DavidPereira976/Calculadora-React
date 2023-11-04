@@ -8,25 +8,27 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 background-image: url(../src/assets/imgs/backgroud.avif);
+background-repeat: no-repeat;
+background-size: cover;
 `
 
 export const FirstDiv = styled.div`
 border: solid #FF0000;
 display: flex;
-height: 300px;
-width: 300px;
+height: 350px;
+width: 350px;
 flex-direction: column;
 align-items: center;
-background-color: purple;
+background-color: black;
 
 `
 export const SecondDiv = styled.div`
 border: solid #4169E1;
-background-color: purple;
 display: flex;
-height: 300px;
+height: 350px;
 flex-direction: column;
 justify-content: space-between;
+
 `
 export const ResultBox = styled.div`
 height: 200px;
@@ -43,7 +45,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-
 width: 600px;
 height: 600px;
 border-radius: 40px;
@@ -90,9 +91,12 @@ color: black;
 `
 
 export const Title = styled.h1`
-font-size: 32px;
+font-size: 42px;
 font-family: 'Open Sans', sans-serif;
 font-weight: 300;
+color: white;
+padding-bottom: 20px;
+
 `
 
 export const SubTitle = styled.h1`
