@@ -11,11 +11,10 @@ import {
   ResultBox,
   StyleInput,
   StyleButton,
-  BorderStyledBox
-} from "./styled";
+  BorderStyledBox,
+} from "./style";
 
 function Main() {
-
   const [primeiroValor, setPrimeiroValor] = useState();
   const [segundoValor, setSegundoValor] = useState();
   const [resultado, setResultado] = useState("=");
@@ -47,39 +46,39 @@ function Main() {
   };
 
   useEffect(() => {
-		setTimeout(() => {
-			if (cor === "Tomato") {
-				setCor("Blue");
-			} else if (cor=== "Blue") {
-				setCor("Pink");
-			} else if (cor === "Pink") {
-      setCor("Tomato")
+    setTimeout(() => {
+      if (cor === "Tomato") {
+        setCor("Blue");
+      } else if (cor === "Blue") {
+        setCor("Pink");
+      } else if (cor === "Pink") {
+        setCor("Tomato");
       }
-		}, 2000);
-	});
+    }, 2000);
+  });
   return (
     <>
       <FirstSection>
-        <BorderStyledBox style={{ backgroundColor: cor, transition: "2s", }}>
-        <Title>Calculadora - React</Title>
-        <GridBox>
-          <FirstDiv>
-            <StyleBoxInput>
-              <StyleInput type="number" onChange={CapturarPrimeiroValor} />
-              <StyleInput type="number" onChange={CapturarSegundoValor} />
-            </StyleBoxInput>
-            <ResultBox>
-              <SubTitle>{resultado}</SubTitle>
-            </ResultBox>
-          </FirstDiv>
+        <BorderStyledBox style={{ color : cor, transition: "2s" }}>
+          <Title>Calculadora - React</Title>
+          <GridBox>
+            <FirstDiv>
+              <StyleBoxInput>
+                <StyleInput type="number" onChange={CapturarPrimeiroValor} />
+                <StyleInput type="number" onChange={CapturarSegundoValor} />
+              </StyleBoxInput>
+              <ResultBox>
+                <SubTitle>{resultado}</SubTitle>
+              </ResultBox>
+            </FirstDiv>
 
-          <SecondDiv>
-            <StyleButton onClick={Soma}>+</StyleButton>
-            <StyleButton onClick={Subtrair}>-</StyleButton>
-            <StyleButton onClick={Multiplicar}>x</StyleButton>
-            <StyleButton onClick={Divisao}>÷</StyleButton>
-          </SecondDiv>
-        </GridBox>
+            <SecondDiv>
+              <StyleButton onClick={Soma}>+</StyleButton>
+              <StyleButton onClick={Subtrair}>-</StyleButton>
+              <StyleButton onClick={Multiplicar}>x</StyleButton>
+              <StyleButton onClick={Divisao}>÷</StyleButton>
+            </SecondDiv>
+          </GridBox>
         </BorderStyledBox>
       </FirstSection>
     </>
