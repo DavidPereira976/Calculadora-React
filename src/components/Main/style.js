@@ -2,7 +2,7 @@ import styled from "styled-components";
 import device from "../../../device";
 
 export const FirstSection = styled.section`
-  border: solid #007f00;
+  /* border: solid #007f00; */
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -13,33 +13,37 @@ export const FirstSection = styled.section`
   background-size: cover;
 
   @media ${device.mobileL} { 
-    
+
   }
 `;
 
 export const FirstDiv = styled.div`
-  border: solid #ff0000;
+  /* border: solid #ff0000; */
   display: flex;
   height: 350px;
   width: 350px;
   flex-direction: column;
   align-items: center;
   background-color: black;
+  border-radius: 30px;
 
   @media ${device.mobileL} {
    
   }
 `;
 export const SecondDiv = styled.div`
-  border: solid #4169e1;
+  /* border: solid #4169e1; */
   display: flex;
   height: 350px;
+  padding-left: 10px;
   flex-direction: column;
   justify-content: space-between;
 
   @media ${device.mobileL} {
   flex-direction: row;
   height: 100px;
+  width: 340px;
+  padding-top: 10px;
   }
 `;
 export const ResultBox = styled.div`
@@ -53,6 +57,7 @@ export const GridBox = styled.div`
 
   @media ${device.mobileL} {
    flex-direction: column;
+   align-items: center;
   }
 `;
 
@@ -64,18 +69,18 @@ export const BorderStyledBox = styled.div`
   width: 600px;
   height: 600px;
   border-radius: 40px;
-  border: solid;
+  border: solid 7px;
 
   @media ${device.mobileL} {
-    
-    width: 300px;
+    width: 370px;
+    border: solid 3px;
   }
 `;
 
 export const StyleBoxInput = styled.div`
-  /* border: solid gray; */
   display: flex;
   width: 250px;
+  padding: 10px;
   justify-content: center;
   justify-content: space-evenly;
 `;
@@ -86,9 +91,10 @@ export const StyleInput = styled.input`
   border-radius: 20px;
   text-align: center;
   text-decoration: double;
-  background-color: gray;
-  color: whitesmoke;
+  background: linear-gradient(to right, #8CAF50, #52a049);
+  color: #fff;
   border-bottom: none;
+  font-size: 20px;
 `;
 
 export const StyleButton = styled.button`
@@ -110,15 +116,22 @@ export const StyleButton = styled.button`
 
 export const Title = styled.h1`
   font-size: 42px;
-  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: white;
-  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 35px 0px 35px 0px;
+
+  @media ${device.mobileL} {
+   font-size: 28px;
+   width: 350px;
+
+  }
 `;
 
 export const SubTitle = styled.h1`
   font-size: 32px;
-  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: white;
 `;
